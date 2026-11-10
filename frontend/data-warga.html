@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareLog | Data Warga</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <h4>Care<span>Log</span></h4>
+            <p>Sistem Informasi Posyandu</p>
+        </div>
+
+        <div class="sidebar-menu">
+            <p class="menu-label">MENU UTAMA</p>
+
+            <a href="index.html" class="menu-item">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="data-warga.html" class="menu-item active">
+                <span>♙</span> Data Warga
+            </a>
+
+            <a href="pemeriksaan.html" class="menu-item">
+                <span>▤</span> Pemeriksaan
+            </a>
+
+            <a href="riwayat.html" class="menu-item">
+                <span>◷</span> Riwayat Pemeriksaan
+            </a>
+        </div>
+
+        <div class="sidebar-footer">
+            <p>CareLog © 2026</p>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- NAVBAR -->
+        <header class="topbar">
+            <div>
+                <h5>Data Warga</h5>
+                <p>Kelola informasi profil warga Posyandu</p>
+            </div>
+
+            <div class="user-profile">
+                <div class="user-avatar">K</div>
+                <div>
+                    <h6>Kader Posyandu</h6>
+                    <small>Administrator</small>
+                </div>
+            </div>
+        </header>
+
+        <!-- PAGE CONTENT -->
+        <section class="dashboard-content">
+
+            <!-- PAGE TITLE -->
+            <div class="page-heading">
+                <div>
+                    <h2>Data Warga</h2>
+                    <p>Kelola dan temukan profil warga dengan mudah.</p>
+                </div>
+
+                <button class="btn btn-primary-custom"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalTambahWarga">
+                    + Tambah Warga
+                </button>
+            </div>
+
+            <!-- SUMMARY -->
+            <div class="row g-3 mb-4">
+
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <p>Total Warga</p>
+                        <h3 id="totalWarga">0</h3>
+                        <small>Warga terdaftar</small>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <p>Bayi / Balita</p>
+                        <h3 id="totalBalita">0</h3>
+                        <small>Profil terdaftar</small>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <p>Ibu Hamil & Lansia</p>
+                        <h3 id="totalIbuHamilLansia">0</h3>
+                        <small>Profil terdaftar</small>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RESIDENT TABLE -->
+            <div class="resident-section">
+
+                <div class="resident-header">
+                    <div>
+                        <h5>Daftar Warga</h5>
+                        <p>Informasi seluruh warga yang terdaftar di Posyandu.</p>
+                    </div>
+                </div>
+
+                <!-- SEARCH AND FILTER -->
+                <div class="filter-area">
+
+                    <div class="search-box">
+                        <input type="text"
+                               id="searchResident"
+                               class="form-control"
+                               placeholder="Cari berdasarkan NIK atau nama...">
+                    </div>
+
+                    <div class="filter-box">
+                        <select id="filterCategory" class="form-select">
+                            <option value="">Semua Kategori</option>
+                            <option value="Bayi/Balita">Bayi/Balita</option>
+                            <option value="Ibu Hamil">Ibu Hamil</option>
+                            <option value="Lansia">Lansia</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <!-- TABLE -->
+                <div class="table-responsive">
+                    <table class="table resident-table">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>NIK</th>
+                                <th>Nama Warga</th>
+                                <th>Tanggal Lahir</th>
+                                <th>Kategori</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="residentTableBody">
+                            <tr>
+                                <td colspan="6" class="empty-state">
+                                    <div class="empty-icon">♙</div>
+                                    <h6>Belum Ada Data Warga</h6>
+                                    <p>Tambahkan profil warga untuk mulai mengelola data Posyandu.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+</div>
+
+<!-- MODAL TAMBAH WARGA -->
+<div class="modal fade" id="modalTambahWarga" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="modalTitle">Tambah Data Warga</h5>
+                    <small id="modalDescription">Masukkan informasi profil warga.</small>
+                </div>
+                <button type="button" class="btn-close"
+                        data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <form id="formTambahWarga">
+
+                    <div class="mb-3">
+                        <label class="form-label">NIK</label>
+                        <input type="text" class="form-control"
+                               id="nik" maxlength="16"
+                               placeholder="Masukkan 16 digit NIK" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Nama Lengkap</label>
+                        <input type="text" class="form-control"
+                               id="nama" placeholder="Masukkan nama warga" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Tanggal Lahir</label>
+                        <input type="date" class="form-control"
+                               id="tanggalLahir" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Jenis Kelamin</label>
+                        <select class="form-select" id="jenisKelamin" required>
+                            <option value="">Pilih jenis kelamin</option>
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Kategori Warga</label>
+                        <select class="form-select" id="kategori" required>
+                            <option value="">Pilih kategori</option>
+                            <option value="Bayi/Balita">Bayi/Balita</option>
+                            <option value="Ibu Hamil">Ibu Hamil</option>
+                            <option value="Lansia">Lansia</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Alamat</label>
+                        <textarea class="form-control" id="alamat"
+                                  rows="3" placeholder="Masukkan alamat warga"></textarea>
+                    </div>
+
+                    <div class="modal-footer px-0 pb-0">
+                        <button type="button" class="btn btn-light"
+                                data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary-custom" id="btnSubmitWarga">
+                            Simpan Data
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Detail Warga -->
+<div class="modal fade" id="modalDetailWarga" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Detail Data Warga</h5>
+                <button type="button" class="btn-close"
+                    data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <h5 id="detailNama" class="mb-3">-</h5>
+
+                <p><strong>NIK:</strong> <span id="detailNIK">-</span></p>
+                <p><strong>Tanggal Lahir:</strong> <span id="detailTanggalLahir">-</span></p>
+                <p><strong>Jenis Kelamin:</strong> <span id="detailJenisKelamin">-</span></p>
+                <p><strong>Kategori:</strong> <span id="detailKategori">-</span></p>
+                <p class="mb-0"><strong>Alamat:</strong> <span id="detailAlamat">-</span></p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"
+                    data-bs-dismiss="modal">Tutup</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+
+</body>
+</html>

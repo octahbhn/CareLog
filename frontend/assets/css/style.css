@@ -1,0 +1,601 @@
+
+/* =================================
+   CARELOG - GLOBAL STYLES
+================================= */
+
+:root {
+    --primary: #16587B;
+    --secondary: #84B3CE;
+    --cream: #F5EEDD;
+    --primary-light: #E3EEF5;
+    --border: #E8DFC8;
+    --text: #12303F;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', system-ui, sans-serif;
+    background-color: var(--white);
+    color: var(--text);
+    font-size: 16px;
+}
+
+/* =================================
+   DASHBOARD LAYOUT
+================================= */
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    margin-bottom: 45px;
+}
+
+.brand h4 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.brand h4 span {
+    color: var(--secondary);
+}
+
+.brand p {
+    font-size: 12px;
+    color: #D7E7F0;
+}
+
+.menu-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #B9D2E0;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 14px;
+    margin-bottom: 8px;
+    color: #E3EEF5;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.menu-item span {
+    font-size: 19px;
+}
+
+.menu-item:hover,
+.menu-item.active {
+    background-color: #FFFFFF;
+    color: var(--primary);
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    font-size: 12px;
+    color: #D7E7F0;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    flex: 1;
+    min-width: 0;
+    background-color: #F8FAFC;
+}
+
+/* TOPBAR */
+.topbar {
+    background-color: var(--white);
+    padding: 20px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.topbar h5 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.topbar p {
+    font-size: 13px;
+    color: #71818B;
+    margin: 0;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-avatar {
+    width: 42px;
+    height: 42px;
+    background-color: var(--primary-light);
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.user-profile h6 {
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+
+.user-profile small {
+    color: #71818B;
+    font-size: 11px;
+}
+
+/* DASHBOARD CONTENT */
+.dashboard-content {
+    padding: 35px;
+}
+
+.welcome-section {
+    margin-bottom: 28px;
+}
+
+.welcome-section h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.welcome-section p {
+    font-size: 14px;
+    color: #71818B;
+}
+
+/* STAT CARDS */
+.stat-card {
+    background-color: var(--white);
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    height: 100%;
+}
+
+.stat-card p {
+    font-size: 14px;
+    color: #71818B;
+    margin-bottom: 15px;
+}
+
+.stat-card h3 {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.stat-card small {
+    font-size: 12px;
+    color: #71818B;
+}
+
+/* ACTIVITY SECTION */
+.activity-section {
+    background-color: var(--white);
+    padding: 25px;
+    margin-top: 25px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.activity-section h5 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.activity-section p {
+    font-size: 14px;
+    color: #71818B;
+    margin: 0;
+}
+
+
+/* =================================
+   DATA WARGA PAGE
+================================= */
+
+/* PAGE HEADING */
+.page-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.page-heading h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.page-heading p {
+    font-size: 14px;
+    color: #71818B;
+    margin: 0;
+}
+
+/* PRIMARY BUTTON */
+.btn-primary-custom {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 11px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn-primary-custom:hover {
+    background-color: #104663;
+    color: var(--white);
+}
+
+/* RESIDENT SECTION */
+.resident-section {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.resident-header {
+    margin-bottom: 22px;
+}
+
+.resident-header h5 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.resident-header p {
+    font-size: 13px;
+    color: #71818B;
+    margin: 0;
+}
+
+/* SEARCH AND FILTER */
+.filter-area {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.search-box {
+    flex: 1;
+}
+
+.filter-box {
+    width: 220px;
+}
+
+.filter-area .form-control,
+.filter-area .form-select,
+.modal-content .form-control,
+.modal-content .form-select {
+    min-height: 46px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--text);
+}
+
+.filter-area .form-control:focus,
+.filter-area .form-select:focus,
+.modal-content .form-control:focus,
+.modal-content .form-select:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(132, 179, 206, 0.2);
+}
+
+/* RESIDENT TABLE */
+.resident-table {
+    vertical-align: middle;
+    margin-bottom: 0;
+    min-width: 750px;
+}
+
+.resident-table thead th {
+    background-color: var(--primary-light);
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 15px 12px;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--border);
+}
+
+.resident-table tbody td {
+    padding: 16px 12px;
+    font-size: 13px;
+    color: var(--text);
+    border-bottom: 1px solid #F0F2F4;
+}
+
+.resident-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* EMPTY STATE */
+.empty-state {
+    text-align: center;
+    padding: 55px 20px !important;
+}
+
+.empty-icon {
+    font-size: 35px;
+    color: var(--secondary);
+    margin-bottom: 12px;
+}
+
+.empty-state h6 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    font-size: 13px;
+    color: #71818B;
+    margin: 0;
+}
+
+/* MODAL */
+.modal-content {
+    border: none;
+    border-radius: 14px;
+    padding: 8px;
+}
+
+.modal-header {
+    padding: 20px 20px 15px;
+    border-bottom: 1px solid var(--border);
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.modal-header small {
+    color: #71818B;
+    font-size: 12px;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-content .form-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+        padding: 22px 14px;
+    }
+
+    .dashboard-content {
+        padding: 22px 16px;
+    }
+
+    .topbar {
+        padding: 18px 16px;
+    }
+
+    .page-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .filter-area {
+        flex-direction: column;
+    }
+
+    .filter-box {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        width: 75px;
+        padding: 20px 10px;
+    }
+
+    .brand h4 {
+        font-size: 16px;
+    }
+
+    .brand p,
+    .menu-label,
+    .menu-item:not(.active) {
+        font-size: 0;
+    }
+
+    .menu-item {
+        justify-content: center;
+        padding: 13px 5px;
+    }
+
+    .menu-item span {
+        font-size: 19px;
+    }
+
+    .sidebar-footer {
+        font-size: 9px;
+    }
+
+    .user-profile h6,
+    .user-profile small {
+        display: none;
+    }
+
+    .welcome-section h2,
+    .page-heading h2 {
+        font-size: 21px;
+    }
+}
+
+
+/* CATEGORY BADGE */
+.category-badge {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background-color: var(--primary-light);
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+
+/* =================================
+   EXAMINATION PAGE
+================================= */
+
+.examination-section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+}
+
+.form-section {
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+}
+
+.form-section h5 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.form-section > p {
+    font-size: 13px;
+    color: #71818B;
+    margin-bottom: 22px;
+}
+
+.form-section .form-label {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.form-section .form-control,
+.form-section .form-select {
+    min-height: 46px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.form-section .form-control:focus,
+.form-section .form-select:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(132, 179, 206, 0.2);
+}
+
+.resident-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    background: var(--primary-light);
+    border-radius: 10px;
+    padding: 18px;
+    margin-top: 18px;
+}
+
+.resident-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.resident-info small {
+    font-size: 12px;
+    color: #71818B;
+}
+
+.resident-info strong {
+    font-size: 13px;
+    color: var(--primary);
+    overflow-wrap: anywhere;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+@media (max-width: 576px) {
+    .examination-section {
+        padding: 18px;
+    }
+
+    .resident-info {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+}

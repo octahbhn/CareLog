@@ -1,0 +1,410 @@
+/* Layout utama */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.main-layout {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.top-header {
+  height: 96px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E8DFC8;
+  padding: 20px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-title h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #12303F;
+}
+
+.header-title p,
+.profile-info p {
+  margin: 2px 0 0;
+  color: #4A6676;
+  font-size: 14px;
+}
+
+.header-profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.profile-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #E3EEF5;
+  color: #16587B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-info h4 {
+  margin: 0;
+  font-size: 15px;
+  color: #12303F;
+}
+
+/* Dashboard */
+.dashboard-content {
+  flex: 1;
+  padding: 32px 36px;
+  background: #F5F8FA;
+}
+
+.welcome-section {
+  margin-bottom: 28px;
+}
+
+.welcome-section h1 {
+  margin: 0 0 4px;
+  font-size: 26px;
+  color: #12303F;
+}
+
+.welcome-section p {
+  margin: 0;
+  color: #4A6676;
+  font-size: 16px;
+}
+
+/* Statistics */
+.statistics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.stat-card,
+.activity-card {
+  background: #FFFFFF;
+  border: 1px solid #E8DFC8;
+  border-radius: 13px;
+  padding: 24px 26px;
+}
+
+.stat-title {
+  margin: 0;
+  color: #4A6676;
+  font-size: 15px;
+}
+
+.stat-card h2 {
+  margin: 10px 0;
+  color: #16587B;
+  font-size: 32px;
+}
+
+.stat-description {
+  margin: 0;
+  color: #4A6676;
+  font-size: 13px;
+}
+
+/* Activity */
+.activity-card h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: #12303F;
+}
+
+.activity-card p {
+  margin: 0;
+  color: #4A6676;
+  font-size: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .statistics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-content {
+    padding: 24px 18px;
+  }
+
+  .top-header {
+    padding: 18px;
+  }
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 250px;
+  min-width: 250px;
+  min-height: 100vh;
+  background: #16587B;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 20px;
+}
+
+/* BRAND */
+.sidebar-brand {
+  padding-bottom: 52px;
+}
+
+.brand-name {
+  font-size: 25px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.brand-name span {
+  color: #84B3CE;
+}
+
+.sidebar-brand p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: #E3EEF5;
+}
+
+/* MENU */
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-heading {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #DCEAF2;
+  margin-bottom: 16px;
+}
+
+.sidebar-menu nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-item {
+  width: 100%;
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.menu-item.active {
+  background: #FFFFFF;
+  color: #16587B;
+}
+
+/* FOOTER */
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+.sidebar-bottom p {
+  font-size: 13px;
+  color: #E3EEF5;
+  margin: 0;
+}
+
+.menu-item {
+  white-space: nowrap;
+  font-size: 14px;
+  gap: 12px;
+  padding: 12px 10px;
+}
+
+
+/* ACTIVITY SECTION */
+.activity-header {
+  margin-bottom: 18px;
+}
+
+.activity-header h3 {
+  margin: 0 0 5px;
+  font-size: 18px;
+  color: #12303F;
+}
+
+.activity-header p {
+  margin: 0;
+  color: #4A6676;
+  font-size: 14px;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  border-top: 1px solid #E8DFC8;
+}
+
+.activity-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 10px;
+  background: #E3EEF5;
+  color: #16587B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.activity-info {
+  flex: 1;
+}
+
+.activity-info h4 {
+  margin: 0;
+  font-size: 15px;
+  color: #12303F;
+  font-weight: 600;
+}
+
+.activity-info p {
+  margin: 3px 0 0;
+  font-size: 13px;
+  color: #4A6676;
+}
+
+.activity-date {
+  font-size: 13px;
+  color: #4A6676;
+}
+
+
+/* RESPONSIVE TABLET DAN MOBILE */
+@media (max-width: 768px) {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-width: 0;
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .sidebar-brand {
+    padding-bottom: 18px;
+  }
+
+  .sidebar-menu {
+    margin-top: 10px;
+  }
+
+  .menu-heading {
+    display: none;
+  }
+
+  .sidebar-menu nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+
+  .menu-item {
+    width: auto;
+    min-width: max-content;
+    min-height: 46px;
+  }
+
+  .sidebar-bottom {
+    display: none;
+  }
+
+  .main-layout {
+    width: 100%;
+  }
+
+  .top-header {
+    height: auto;
+    min-height: 80px;
+    padding: 16px 20px;
+  }
+
+  .dashboard-content {
+    padding: 24px 18px;
+  }
+
+  .statistics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-date {
+    font-size: 11px;
+  }
+}
+
+/* RESPONSIVE HP KECIL */
+@media (max-width: 480px) {
+  .header-profile {
+    gap: 8px;
+  }
+
+  .profile-info h4 {
+    font-size: 12px;
+  }
+
+  .profile-info p {
+    font-size: 11px;
+  }
+
+  .profile-avatar {
+    width: 38px;
+    height: 38px;
+  }
+
+  .welcome-section h1 {
+    font-size: 22px;
+  }
+
+  .activity-item {
+    flex-wrap: wrap;
+  }
+}
+
+.menu-item:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.menu-item.active:disabled {
+  opacity: 1;
+  cursor: default;
+}

@@ -1,0 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Poppins', system-ui, sans-serif;
+  color: #12303F;
+  background: #F5EEDD;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+button {
+  font: inherit;
+}
